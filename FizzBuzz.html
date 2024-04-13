@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>FizzBuzz in console</h1>
+
+<script>
+    var fizzBuzz = function(n){
+        var array = [];
+        for(let i=1; i<=n; i++){
+            if(i%5==0 && i%3==0){
+                array.push("FizzBuzz")
+            } else if(i%3==0){
+                array.push("Fizz")
+            } else if(i%5==0){    
+                array.push("Buzz")
+            }
+            else{
+                array.push(i.toString())
+            }
+        };
+        return array;
+
+    }
+    var answer = fizzBuzz(15)
+    console.log(answer)
+</script>
+</body>
+
+</html>
