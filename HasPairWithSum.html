@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <script>
+            // 2 numbers in a collection of numbers equals a sum
+            // input: [1,2,3,4,4] Sum= 8
+            // input: [1,2,3,9] Sum= 8
+            
+            //Naive Approach
+            // function hasPairWithSum2(arr,sum){
+            //     var length = arr.length;
+            //     for(var i=0; i<length; i++){
+            //         for (var j= i+1; j<length; j++){
+            //             if(arr[i]+arr[j] === sum){
+            //                 return true;
+            //             }
+            //         }
+            //         return false
+            //     }
+                
+            // }
+
+            //Better
+            function hasPairWithSum2(arr, sum){
+                const mySet = new Set();
+                for(let i = 0; i<arr.length;i++){
+                    if(mySet.has(arr[i])){
+                        return true;
+                    }
+                    mySet.add(sum-arr[i]);
+                }
+            }
+            console.log(hasPairWithSum2([6,4,3,2,1,7], 9))
+        </script>
+    </body>
+</html>

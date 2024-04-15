@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <script>
+            //Givven 2 arrays, create a function that let's a user know (true/false) whether these two arrays contain any common items
+            //For Example
+            //const array1 = ['a','b','c','x'];
+            //const array2 = ['z','y','i'];
+            //should return false
+            //------------------
+            //const array1 = ['a','b','c','x'];
+            //const array2 = ['z','y','x'];
+            //should return true
+            //------------------
+
+            // 2 parameters - arrays - no size limits
+            // return true or false
+
+            //0(n^2) NEsted loop brute force may not be most efficient
+
+            // function containsCommonItem(arr1,arr2){
+            //     for(let i = 0; i<arr1.length; i++){
+            //         for(let j=0; j<arr2.length; j++){
+            //             if(arr1[i] === arr2[j]){
+            //                 return true;
+            //             }
+            //         }
+            //     }
+            //     return false
+            // }
+            // const arr1 =['a','b','c','x']
+            // const arr2 =  ['z','y','x']
+            // var result = containsCommonItem(arr1, arr2)
+            // console.log(result)       NOT BEST SOLUTION as time complexity!
+
+
+
+            const array1 = ['a','b','c','x'];
+            const array2 = ['z','2','2'];
+            // function containsCommon2Item2(arr1,arr2){
+                //loop through first array and create an object where the properties === items in the array
+                //loop through the second array and chceck if item in second array exists on created object
+            //     let map = {};
+            //     for (let i= 0; i<arr1.length; i++){
+            //         if(!map[array1[i]]){
+            //             const item = array1[i]
+            //             map[item] = true;
+            //         }
+            //     }
+            //     for(let j = 0; j<arr2.length;j++){
+            //         if(map[array2[j]]){
+            //             return true
+            //         }
+            //     }
+            //     return false
+            // }
+            // var result = containsCommon2Item2(array1,array2);
+            // console.log(result)
+            //Time complexity is far better but space complexity is worse because of space of object!!
+
+            //Best JAvaScript way!!!
+            function containsCommon(arr1,arr2){
+                return arr1.some(item=> arr2.includes(item))
+            }
+
+            var result = containsCommon(array1,array2);
+            console.log(result)
+        </script>
+    </body>
+</html>
