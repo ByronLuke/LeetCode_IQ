@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <title> Reverse a String</title>
+    <body>
+        <script>
+            // CReate a function that reverses a string
+            // ' Hi my name is Byron' shiuld be":
+            // noryB si eman ym iH
+
+            //reverse forloop with an array first option
+            //not the best when optimizing space or time
+            function reverseString(str){
+                let reverseStr = [];
+                for(let i=str.length; i>=0; i--){
+                    reverseStr.push(str[i])
+                }
+                return reverseStr.join('');
+            }
+            var result = reverseString("Byron");
+
+            console.log(result)
+
+            // Javascript specific option
+            function reverse(str){
+                return str.split('').reverse().join('')
+            }
+
+            var result2 = reverse('Byron')
+            console.log(result2)
+
+            //Modern js function with es6 syntax with arrow function
+            const reverse3 = str => str.split('').reverse().join('')
+
+            console.log(reverse3('Byron'))
+
+            //With spread function
+            const reverse4 = str => [...str].reverse().join('')
+
+            console.log(reverse4('Byron'))
+
+        </script>
+    </body>
+</html>

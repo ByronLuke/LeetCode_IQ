@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <title>
+        Classes
+    </title>
+    <body>
+        <script>
+            // reference type 
+            var object1 = {value: 10};
+            var object2 = object1;
+            var object3 = {value: 10};
+
+            //context vs scope
+            console.log(this) //window object
+            console.log(this === window) //true
+            this.alert("hello") // same object
+            window.alert("hello") // same object it is inside of
+
+            function a(){
+                console.log(this)
+            }
+
+            a()
+
+            const object4 = {
+                a: function(){
+                    console.log(this)
+                }
+            }
+            //instantiation is making a copy of an object and reuse the code
+            //making instance (or multiple copies)
+            //instantiation 
+            class Player {
+                constructor(name, type){
+                    console.log(this)
+                    this.name = name;
+                    this.type = type;
+                }
+                introduce(){
+                    console.log(`Hi I am ${this.name}, I'm a ${this.type}`);
+                }
+            }
+
+            class Wizard extends Player {
+                constructor(name,type){
+                    super(name, type)//whenever you extend a class, use super so you have access to the constructor in the class you extended form
+                } 
+                play(){
+                    console.log(`WEEEEEEE I'm a ${this.type}`)
+                }
+            }
+            const wizard1 = new Wizard('Shelly', 'Healer')
+            const wizard2 = new Wizard('Shawn', 'Dark Magic');
+
+
+        </script>
+    </body>
+</html>

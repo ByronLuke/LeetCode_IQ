@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <title> Rotate Array </title>
+    <body>
+        <script>
+            var rotate = function(nums, k) {
+                return [...nums.slice(k+1), ...nums.slice(0,k+1)]
+            };
+            console.log(rotate([1,2,3,4,5,6,7],3))
+            //Output: [5,6,7,1,2,3,4]
+
+            var rotate = function(nums, k) {
+                var valuesToBringtoFront = nums.length - k % nums.length
+                nums.push(...nums.splice(0, valuesToBringtoFront));
+            };
+            console.log(rotate([1,2,3,4,5,6,7],3))
+        </script>
+    </body>
+</html>

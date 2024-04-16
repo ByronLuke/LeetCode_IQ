@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <title>
+        Contains Duplicates
+    </title>
+    <body>
+        <script>
+            var containsDuplicate = function(nums) {
+                for(var i = 0; i <= nums.length; i++){
+                    if(nums[i]===nums[i+1]){
+                        return true
+                    }
+                }
+                return false
+            };
+
+            //faster way using SET
+            var containsDuplicate = function(nums) {
+                var set = new Set(nums)
+                return set.size !== nums.length
+            };
+            console.log(containsDuplicate([1,2,2,4,5]))
+
+
+        </script>
+    </body>
+</html>
